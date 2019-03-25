@@ -31,58 +31,20 @@
             </div>
 
             <div class="remember">
-                    <input type="checkbox" name="remember" value="1"> 记住我
+                <input type="checkbox" name="remember" id="rememberBtn" value="1"> 记住我
             </div>
 
-            <div onclick="showFg()" class="fg" >
+            <div onclick="showFg()" class="fg">
                 忘记密码？
             </div>
             <div class="btn">
                 <div class="btn1 left_float">
                     <input id="btn1" type="submit" name="user_login" value="登录">
                 </div>
-                <div onclick="showRs()" class="btn2 left_float">
-                    <input id="btn2" type="button" name="user_resign" value="注册" />
-                </div>
             </div>
     </div>
 </div>
-<!--注册-->
-<div class="resign">
-    <li onclick="hideRs()" class="reLogin"><img src="{% static 'images/返回.png' %}"></li>
 
-    <div class="bg">
-        <div class="wel">用户注册</div>
-        <form>
-            <div class="user_name">
-                <div class="number">用&nbsp;&nbsp;户&nbsp;&nbsp;名</div>
-                <input  type="text" id="resignUser" onblur="nameVerify(oResignUser,error3)" onfocus="clearError(error3)" name="resignUser"  autocomplete="off" placeholder="请编辑您的用户名"/>
-                <span id="error3"></span>
-            </div>
-            <div class="user_phone">
-                <div class="number">手&nbsp;&nbsp;机&nbsp;&nbsp;号</div>
-                <input  type="text" id="resignPhone" onblur="phoneVerify(oResignPhone,error4)" onfocus="clearError(error4)" name="resignPhone"  autocomplete="off" placeholder="请输入需绑定的手机号"/>
-                <span id="error4"></span>
-            </div>
-            <div class="pin" >
-                <div class="number">验&nbsp;&nbsp;证&nbsp;&nbsp;码</div>
-                <input type="text" id="resignPin" name="resignPin"  autocomplete="off" placeholder="请输入手机验证码"/>
-                <input type="button" class="numbtn" id="re-checkCode" value="获取验证码">
-            </div>
-            <div class="password_reset" >
-                <div class="number">设置密码</div>
-                <input type="password" id="resignPassword" onblur="passwordVerify(oResignPassword,error5)" onfocus="clearError(error5)" name="resignPassword"  autocomplete="off" placeholder="请设置密码"  />
-                <span id="error5"></span>
-            </div>
-            <div class="password" >
-                <div class="number">确认密码</div>
-                <input type="password" id="resignRePassword" onblur="confirmPassword(oResignRePassword,oResignPassword,error6)" onfocus="clearError(error6)" name="resignRePassword"  autocomplete="off" placeholder="请再次输入确认密码" />
-                <span id="error6"></span>
-            </div>
-            <input class="btn" type="submit" id ="reset" name="reset" value="立即注册" style="cursor: pointer" />
-        </form>
-    </div>
-</div>
 <!--找回密码-->
 <div class="findWord">
     <li onclick="hideFg()" class="reLogin"><img src="{% static 'images/返回.png' %}"></li>
@@ -92,8 +54,8 @@
         <form>
             <div class="user_phone">
                 <div class="number">手&nbsp;&nbsp;机&nbsp;&nbsp;号</div>
-                <input  type="text" id="phoneNumber" onblur="phoneVerify(oPhoneNumber,error7)" onfocus="clearError(error7)" name="phoneNumber"  autocomplete="off" placeholder="请输入手机号"/>
-                <span id="error7"></span>
+                <input  type="number" id="phoneNumber" onblur="phoneVerify(oPhoneNumber,error3)" onfocus="clearError(error7)" name="phoneNumber"  autocomplete="off" placeholder="请输入手机号"/>
+                <span id="error3"></span>
             </div>
             <div class="pin" >
                 <div class="number">验&nbsp;&nbsp;证&nbsp;&nbsp;码</div>
@@ -102,13 +64,13 @@
             </div>
             <div class="password_reset" >
                 <div class="number">新&nbsp;&nbsp;密&nbsp;&nbsp;码</div>
-                <input type="password" id="findPassword" onblur="passwordVerify(oFindPassword,error8)" onfocus="clearError(error8)" name="findPassword" autocomplete="off" placeholder="请重置密码"  />
-                <span id="error8"></span>
+                <input type="password" id="findPassword" onblur="passwordVerify(oFindPassword,error4)" onfocus="clearError(error8)" name="findPassword" autocomplete="off" placeholder="请重置密码"  />
+                <span id="error4"></span>
             </div>
             <div class="password" >
                 <div class="number">确认密码</div>
-                <input type="password" id="rePassword" onblur="confirmPassword(oRePassword,oFindPassword,error9)" onfocus="clearError(error9)" name="rePassword" autocomplete="off" placeholder="请再次输入确认密码" />
-                <span id="error9"></span>
+                <input type="password" id="rePassword" onblur="confirmPassword(oRePassword,oFindPassword,error5)" onfocus="clearError(error9)" name="rePassword" autocomplete="off" placeholder="请再次输入确认密码" />
+                <span id="error5"></span>
             </div>
             <input class="btn" type="submit" id="find" name="find" value="确认重置" style="cursor: pointer" />
         </form>
@@ -125,17 +87,9 @@
         document.getElementsByClassName('findWord')[0].style.display ='block';
         document.getElementsByClassName('login')[0].style.display ='none';
     }
-    function showRs() {
-        document.getElementsByClassName('resign')[0].style.display = 'block';
-        document.getElementsByClassName('login')[0].style.display ='none';
-    }
     function hideFg() {
         document.getElementsByClassName('login')[0].style.display = 'block';
         document.getElementsByClassName('findWord')[0].style.display ='none';
-    }
-    function hideRs() {
-        document.getElementsByClassName('login')[0].style.display = 'block';
-        document.getElementsByClassName('resign')[0].style.display ='none';
     }
     //退出弹框
     function pro() {

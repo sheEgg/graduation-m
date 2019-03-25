@@ -12,6 +12,7 @@ Auth.prototype.listenLoginEvent = function () {
     var submitBtn = $('#btn1');
 
     submitBtn.click(function () {
+        setCookie();
         var telephone = telephoneInput.val();
         var password = passwordInput.val();
         var remember = rememberInput.prop('checked');
@@ -42,3 +43,35 @@ $(function () {
     var auth = new Auth();
     auth.run();
 });
+
+
+//记住密码-存cookie
+$(function () {
+    getCookie();
+});
+function setCookie() {
+    var username = $("#loginUser").val(); //获取用户名信息    
+    var pwd = $("#loginPassword").val(); //获取登陆密码信息  
+    var checked = $("input[id='rememberBtn']").prop("checked");
+    console.log(checked)
+    if (checked) {
+        $.cookie("username", username, { expires: 7 }); //设置cookie中的用户名    
+        $.cookie("password", pwd, { expires: 7 }); //设置cookie中的登陆密码
+    } else {
+        $.cookie("password", null);
+    }
+}
+//记住密码--读cookie
+function getCookie() {
+    var loginCode = $.cookie("username");
+    var passWord = $.cookie("password"); //获取cookie中的登陆密码    
+    if (passWord) { //密码存在的话把“记住用户名和密码”复选框勾选住    
+        $("[id='rememberBtn']").attr("checked", "true");
+    }
+    if (loginCode) { //用户名填充
+        $("#loginUser").val(loginCode);
+    }
+    if (passWord) { //密码填充 
+        $("#loginPassword").val(passWord);
+    }
+}

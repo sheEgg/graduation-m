@@ -254,10 +254,10 @@
 }
 .familyEchart{
     float: left;
-    left: 4rem;
 }
 .marryEchart{
-    right: 4rem;
+    position: absolute;
+    right: 15px;
 }
 .histoechart{
     width: 1009px;
@@ -267,31 +267,20 @@
     /*position: absolute;*/
 }
 .ageEchart{
-    margin-top: 26rem;
+    margin-top: 320px;
 }
 
 /*2019/2/20增加部分*/
 /*社区资料*/
 .information .content > div{
+    position: relative;
     background: #f2f6fa;
     color: #424242;
-    height: 490px;
+    height: auto;
     border-radius: 5px;
 }
 .information form{
     font-family: "微软雅黑 Light";
-}
-
-.information .control-group1{
-    position: absolute;
-    left: 0;
-    width: 280px;
-}
-
-.information .control-group2{
-    position: absolute;
-    width: 280px;
-    left: 395px;
 }
 
 .information p{
@@ -318,6 +307,7 @@
     margin-top: 5px;
     position: absolute;
     right: 30px;
+    bottom: 1%;
 }
 /*!--增加部分*/
 
@@ -355,7 +345,7 @@
     color: #f2f6fa;
     text-align: center;
     line-height: 30px;
-    margin: 10px 0 0 980px;
+    margin: 10px 10px 0 0;
 }
 /*公告管理*/
 .notsys .bootstrap-table{
