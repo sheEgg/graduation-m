@@ -162,7 +162,9 @@
     margin-top: -10px;
     position: relative;
 }
-.residents table{
+
+/*表格*/
+table{
     width: 100%;
     height: 100%;
     border-collapse: collapse;
@@ -171,28 +173,50 @@
     background: #f2f6fa;
     margin-top: 10px;
 }
-.residents thead tr th{
-    border: 0.5px solid #ddd;
-    padding: 0;
-    text-align: center;
-    height: 30px;
+
+table.dataTable thead > tr > th {
+	color: #424242;
+	background: rgba(50,122,183,0.1);
+	border: none;
 }
-.residents table tbody{
-    border: 0.5px solid #ddd;
-    padding: 0;
+.table-control i{
+	margin-right: 15px;
+	font-size: 10px;
+	cursor: pointer;
 }
-.residents table tbody td{
-    border: 0.5px solid #ddd;
-    line-height: 28px;
+.table-control .fa-trash-o{
+	color: #d9534f;
 }
-.residents td input{
-    background-color: #3399cc;
-    color: #fff;
+.table-control .fa-pencil-square-o{
+	color: #00a98f;
+}
+.table-control .fa-search-plus{
+	color: #327ab7;
+}
+table.dataTable thead > tr > th{
+	padding-left: 8px;
+	text-align: center;
+}
+.table > tbody > tr > td{
+	text-align: center;
+	font-size: 14px;
+}
+/* 搜索框 */
+.dataTables_wrapper .dataTables_filter input{
+    color: #424242 !important;
     outline: none;
-    border: 1px solid transparent;
-    font-size: 10px;
-    margin: 3px 0;
+    padding-left: 7px;
+    margin-left: 15px;
+    border-radius: 5px;
+    border: 1px solid #cecece;
+    cursor: auto;
+    outline: none;
 }
+/* 翻页 */
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    padding: 0 !important;
+}
+
 /*新增居民表单*/
 .form{
     width: 100%;
@@ -211,6 +235,7 @@
     border-radius: 5px;
 }
 /*//修改部分*/
+
 .resWrapper ul{
     display: inline-block;
     margin-top: 1.5rem;
@@ -277,6 +302,7 @@
     background: #f2f6fa;
     color: #424242;
     height: auto;
+  
     border-radius: 5px;
 }
 .information form{
@@ -311,6 +337,8 @@
 }
 /*!--增加部分*/
 
+
+
 /*系统管理之发布公告*/
 .not .notGroup{
     margin-bottom: 2rem;
@@ -327,8 +355,10 @@
     background: #f2f6fa;
     width: 100%;
 }
+
 .not .btn{
     margin-top: 20px;
+    width: 100px;
     height: 36px;
     border: 1px solid #ddd;
     color: #777;

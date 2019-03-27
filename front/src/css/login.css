@@ -96,6 +96,18 @@
     right: 1.8rem;
     display: flex;
 }
+/* 获取验证码 */
+#fi-checkCode{
+    text-indent: 0;
+    font-size: 12px;
+    width: 91px;
+    height: 30px;
+    color: #fff;
+    background-color: #347fbcde;
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+}
 /*忘记密码重置密码*/
 .findWord .password_reset{
     position: absolute;
