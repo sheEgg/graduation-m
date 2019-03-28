@@ -21,7 +21,7 @@
         <div class="wel">用户登录</div>
             <div class="user">
                 <div class="number">账&nbsp;&nbsp;&nbsp;&nbsp;号</div>
-                <input type="text" id="loginUser" onblur="nameVerify(oLoginUser,error1)" onfocus="clearError(error1)" name="telephone" autocomplete="off" placeholder="请输入手机号" value="" />
+                <input type="text" id="loginUser" onblur="phoneVerify(oLoginUser,error1)" onfocus="clearError(error1)" name="telephone" autocomplete="off" placeholder="请输入手机号" value="" />
                 <span id="error1"></span>
             </div>
             <div class="password" >
@@ -79,6 +79,7 @@
 <script src="{% static 'js/verify.js' %}"></script>
 {#<script src="{% static 'js/ajax.js' %}"></script>#}
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
 <script src="{% static 'js/auth.js' %}"></script>
 <script src="{% static 'js/yskajax.js' %}"></script>
 <script>
