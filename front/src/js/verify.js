@@ -1,11 +1,15 @@
 // 校验要求：
 //     1.每一项都必须填写内容或者做出选择，不能存在空项；+++++++++
 //
-//     2.用户名：联系电话：确保手机号码的有效性；+++++++++
+//
+//     2.用户名：开头不能为数字,只能包含字母和数字，长度为6-20个字符；++++++++
+//
 //
 //     3.密码：必须包含英文字母大小写和数字，长度不能少于6个字符；++++++
-//
 //     4.确认密码：必须与密码相同；
+//
+//
+//     5.联系电话：确保手机号码的有效性；+++++++++
 //
 //     6.如果用户没有按照以上要求输入信息，则当光标离开该项时，用红色字体给出相应的提示信息。++++++
 
@@ -19,9 +23,9 @@ var error1 = document.getElementById('error1'),
     error2 = document.getElementById('error2'),
     error3 = document.getElementById('error3'),
     error4 = document.getElementById('error4'),
-    error5 = document.getElementById('error5'),
-//    账号
-function phoneVerify(obj,error) {
+    error5 = document.getElementById('error5');
+//用户名/手机号
+function phoneVerify(number,error){
     // 为兼容以后电话号码增加的情况，只验证以1开头
     var re =/^1\d{10}$/;
     if(number.value ===""){
@@ -68,6 +72,8 @@ function confirmPassword(pw1,pw2,error) {
 function clearError(error) {
     error.innerText = '';
 }
+
+// 2019/2/21增加部分
 //获取验证码点击事件
 var count = 60;
 var interval = null;
@@ -103,8 +109,6 @@ window.onload = function (btn){
             }, 1000);
         }
     }
-};
-var rebtn = document.getElementById('re-checkCode');
-window.onload(rebtn);
+}
 var fibtn = document.getElementById('fi-checkCode');
 window.onload(fibtn);

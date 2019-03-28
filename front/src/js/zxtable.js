@@ -1,99 +1,98 @@
 (function innit() {
-    var zxpatient = [{
-            "id": 20180101,
-            "name": "李富贵",
-            "sex": "男",
-            "phone": 15236478900,
-            "date": "2018-12-31",
-            "kind": "高血压体脂肪检查"
-        },
-        {
-            "id": 20180102,
-            "name": "曾宝强",
-            "sex": "男",
-            "phone": 15236478900,
-            "date": "2018-12-25",
-            "kind": "糖尿病空腹血糖检查"
-        },
-        {
-            "id": 20180103,
-            "name": "陈飞",
-            "sex": "男",
-            "phone": 15236478900,
-            "date": "2018-12-11",
-            "kind": "幼儿卡介苗接种"
-        },
-        {
-            "id": 20180104,
-            "name": "黄丽",
-            "sex": "女",
-            "phone": 15236478900,
-            "date": "2018-12-06",
-            "kind": "孕期B超检查"
-        },
-        {
-            "id": 20180105,
-            "name": "王成",
-            "sex": "男",
-            "phone": 15236478900,
-            "date": "2018-12-03",
-            "kind": "骨折之后康复治疗"
-        },
-        {
-            "id": 20180106,
-            "name": "吕一丽",
-            "sex": "女",
-            "phone": 15236478900,
-            "date": "2018-11-29",
-            "kind": "乙肝疫苗接种"
-        },
-        {
-            "id": 20180107,
-            "name": "卢玉兰",
-            "sex": "女",
-            "phone": 15236478900,
-            "date": "2018-11-19",
-            "kind": "糖尿病肾功能检查"
-        },
-        {
-            "id": 20180108,
-            "name": "刘万鹏",
-            "sex": "男",
-            "phone": 15236478900,
-            "date": "2018-11-16",
-            "kind": "高血压康复治疗"
-        },
-        {
-            "id": 20180109,
-            "name": "雷乔亚",
-            "sex": "女",
-            "phone": 15236478900,
-            "date": "2018-11-13",
-            "kind": "产后恢复康复治疗"
-        },
-        {
-            "id": 20180109,
-            "name": "张三",
-            "sex": "女",
-            "phone": 15236478900,
-            "date": "2018-11-10",
-            "kind": "产后恢复康复治疗"
-        },
-        {
-            "id": 20180109,
-            "name": "李四",
-            "sex": "女",
-            "phone": 15236478900,
-            "date": "2018-11-01",
-            "kind": "产后恢复康复治疗"
-        },
-    ];
+    // var zxpatient = [{
+    //         "id": 20180101,
+    //         "name": "李富贵",
+    //         "sex": "男",
+    //         "phone": 15236478900,
+    //         "date": "2018-12-31",
+    //         "kind": "高血压体脂肪检查"
+    //     },
+    //     {
+    //         "id": 20180102,
+    //         "name": "曾宝强",
+    //         "sex": "男",
+    //         "phone": 15236478900,
+    //         "date": "2018-12-25",
+    //         "kind": "糖尿病空腹血糖检查"
+    //     },
+    //     {
+    //         "id": 20180103,
+    //         "name": "陈飞",
+    //         "sex": "男",
+    //         "phone": 15236478900,
+    //         "date": "2018-12-11",
+    //         "kind": "幼儿卡介苗接种"
+    //     },
+    //     {
+    //         "id": 20180104,
+    //         "name": "黄丽",
+    //         "sex": "女",
+    //         "phone": 15236478900,
+    //         "date": "2018-12-06",
+    //         "kind": "孕期B超检查"
+    //     },
+    //     {
+    //         "id": 20180105,
+    //         "name": "王成",
+    //         "sex": "男",
+    //         "phone": 15236478900,
+    //         "date": "2018-12-03",
+    //         "kind": "骨折之后康复治疗"
+    //     },
+    //     {
+    //         "id": 20180106,
+    //         "name": "吕一丽",
+    //         "sex": "女",
+    //         "phone": 15236478900,
+    //         "date": "2018-11-29",
+    //         "kind": "乙肝疫苗接种"
+    //     },
+    //     {
+    //         "id": 20180107,
+    //         "name": "卢玉兰",
+    //         "sex": "女",
+    //         "phone": 15236478900,
+    //         "date": "2018-11-19",
+    //         "kind": "糖尿病肾功能检查"
+    //     },
+    //     {
+    //         "id": 20180108,
+    //         "name": "刘万鹏",
+    //         "sex": "男",
+    //         "phone": 15236478900,
+    //         "date": "2018-11-16",
+    //         "kind": "高血压康复治疗"
+    //     },
+    //     {
+    //         "id": 20180109,
+    //         "name": "雷乔亚",
+    //         "sex": "女",
+    //         "phone": 15236478900,
+    //         "date": "2018-11-13",
+    //         "kind": "产后恢复康复治疗"
+    //     },
+    //     {
+    //         "id": 20180109,
+    //         "name": "张三",
+    //         "sex": "女",
+    //         "phone": 15236478900,
+    //         "date": "2018-11-10",
+    //         "kind": "产后恢复康复治疗"
+    //     },
+    //     {
+    //         "id": 20180109,
+    //         "name": "李四",
+    //         "sex": "女",
+    //         "phone": 15236478900,
+    //         "date": "2018-11-01",
+    //         "kind": "产后恢复康复治疗"
+    //     },
+    // ];
     $('#zxtable').DataTable({
-        // ajax: {
-        //     type: "post",
-        //     url: ""
-        // },
-        // processing: true,
+        ajax: {
+            url: "https://easy-mock.com/mock/5c9c2e7fd172204b3a07ec75/zxList",
+        },
+        processing: true,
         // stateSave: false,
         // ordering: false,
         // serverSide: true,
@@ -122,22 +121,21 @@
             },
         aoColumnDefs: [ { "bSortable": false, "aTargets": [ 0 ,7] }],
         aaSorting: [[1, "asc"]],
-        data: zxpatient,
         columns: [
             {
                 "className": "details-control",
-                "data": null,
+                data: null,
                 "defaultContent": '<td><span><i class="fa fa-square-o fa-lg"></i></span></td>'
             },
-            {data: 'id' },
-            {data: 'name' },
-            {data: 'sex' },
-            {data: 'phone' },
-            {data: 'date'},
-            {data: 'kind'},
+            {data: "id" },
+            {data: "name" },
+            {data: "sex"},
+            {data: "phone" },
+            {data: "date"},
+            {data: "kind"},
             {
                 "className": "table-control",
-                "data": null,
+                data: null,
                 "defaultContent": "<td><i title='删除' class='fa fa-trash-o table-delete-btn' aria-hidden='true'>删除</i><i title='修改' class='fa fa-pencil-square-o table-update-btn' aria-hidden='true'>修改</i><i title='查看' class='fa fa-search-plus table-view-btn' aria-hidden='true'>查看</i></td>"
             }]
     });
