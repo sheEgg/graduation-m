@@ -1,24 +1,29 @@
-*{
+* {
     list-style: none;
 }
+
 /*mian content*/
 /*服务提醒*/
-.sever{
+.sever {
     height: auto ! important;
     overflow: hidden;
 }
-.sWrapper{
+
+.sWrapper {
     margin-bottom: 15px;
     margin-left: 25px;
 }
-.sWrapper i{
+
+.sWrapper i {
     font-size: 25px;
     color: #0169a4;
 }
-.sWrapper.title{
+
+.sWrapper.title {
     font-size: 15px;
 }
-.sWrapper .search{
+
+.sWrapper .search {
     width: 125px;
     height: 25px;
     color: #424242;
@@ -29,93 +34,112 @@
     border: 1px solid #cecece;
     cursor: auto;
 }
-.sWrapper .stitle{
+
+.sWrapper .stitle {
     color: #afafaf;
     font-size: 10px;
     top: 15px;
     margin-left: 20px;
 }
-.sWrapper .mbtn{
+
+.sWrapper .mbtn {
     color: #3c8dff;
     font-size: 12px;
     margin-left: 9px;
     cursor: pointer;
 }
-.sWrapper .sActive{
+
+.sWrapper .sActive {
     color: #fff;
-    background-color:  #3c8dff;
+    background-color: #3c8dff;
     border-radius: 3px;
 }
-.infoWrapper{
+
+.infoWrapper {
     padding-left: 25px;
     list-style: none;
     width: 465px;
 }
-.patientInfo{
+
+.patientInfo {
     position: relative;
     margin-bottom: 20px;
     border-bottom: 0.5px solid #cecece;
     text-align: center;
 }
-.date{
+
+.date {
     background: #3399cc;
     color: #f2f6fa;
     width: 90px;
     top: 0;
     text-align: center;
 }
-.name{
+
+.name {
     position: absolute;
     left: 120px;
     top: 0;
 }
-.phone{
+
+.phone {
     position: absolute;
     left: 195px;
     top: 0;
 }
-.des{
+
+.des {
     position: absolute;
     left: 310px;
     top: 0;
 }
-.severMission{
+
+.severMission {
     background-color: #f2f6fa;
     border-radius: 10px;
     width: 490px;
     float: left;
     margin-left: 30px;
 }
-.homeMission{
+
+.homeMission {
     background-color: #f2f6fa;
     border-radius: 10px;
     width: 490px;
     float: right;
     margin-right: 30px;
 }
+
 @media screen and (max-width: 1306px) {
-    .severMission{
+    .severMission {
         width: 93%;
     }
-    .infoWrapper{
+
+    .infoWrapper {
         width: 97%;
     }
-    .sWrapper .search{
+
+    .sWrapper .search {
         width: 45%;
     }
-    .stitle{
+
+    .stitle {
         margin-left: 47%;
     }
-    .name{
+
+    .name {
         left: 25%;
     }
-    .phone{
+
+    .phone {
         left: 43%;
     }
-    .des{
+
+    .des {
         left: 68%;
     }
-    .homeMission{
+
+    .homeMission {
         width: 93%;
         float: left;
         margin-left: 30px;
@@ -124,7 +148,7 @@
 }
 
 /*居民管理*/
-.resWrapper .add{
+.resWrapper .add {
     width: 70px;
     height: 30px;
     border: 1px solid transparent;
@@ -134,7 +158,8 @@
     background-color: #3399cc;
     color: #fff;
 }
-.resWrapper .tabBtn{
+
+.resWrapper .tabBtn {
     display: inline-block;
     width: 105px;
     height: 30px;
@@ -147,24 +172,28 @@
     border-radius: 3px;
     font-size: 13px;
 }
-.residents .resWrapper .tabActive{
+
+.residents .resWrapper .tabActive {
     background-color: #3399cc;
     color: #fff;
 }
-.show{
+
+.show {
     display: block;
 }
-.residents .zxTable{
+
+.residents .zxTable {
     margin-top: -10px;
     position: relative;
 }
-.residents .smTable{
+
+.residents .smTable {
     margin-top: -10px;
     position: relative;
 }
 
 /*表格*/
-table{
+table {
     width: 100%;
     height: 100%;
     border-collapse: collapse;
@@ -172,37 +201,41 @@ table{
     text-align: center;
     background: #f2f6fa;
     margin-top: 10px;
+    position: relative;
 }
 
-table.dataTable thead > tr > th {
-	color: #424242;
-	background: rgba(50,122,183,0.1);
-	border: none;
+table.dataTable thead>tr>th {
+    color: #424242;
+    background: rgba(50, 122, 183, 0.1);
+    border: none;
 }
-.table-control i{
-	margin-right: 15px;
-	font-size: 10px;
-	cursor: pointer;
+
+.table-control i {
+    margin-right: 15px;
+    font-size: 10px;
+    cursor: pointer;
 }
-.table-control .fa-trash-o{
-	color: #d9534f;
+
+.table-control .fa-trash-o {
+    color: #d9534f;
 }
-.table-control .fa-pencil-square-o{
-	color: #00a98f;
+
+.table-control .fa-pencil-square-o {
+    color: #327ab7;
 }
-.table-control .fa-search-plus{
-	color: #327ab7;
+
+table.dataTable thead>tr>th {
+    padding-left: 8px;
+    text-align: center;
 }
-table.dataTable thead > tr > th{
-	padding-left: 8px;
-	text-align: center;
+
+.table>tbody>tr>td {
+    text-align: center;
+    font-size: 14px;
 }
-.table > tbody > tr > td{
-	text-align: center;
-	font-size: 14px;
-}
+
 /* 搜索框 */
-.dataTables_wrapper .dataTables_filter input{
+.dataTables_wrapper .dataTables_filter input {
     color: #424242 !important;
     outline: none;
     padding-left: 7px;
@@ -212,107 +245,127 @@ table.dataTable thead > tr > th{
     cursor: auto;
     outline: none;
 }
+
 /* 翻页 */
-.dataTables_wrapper .dataTables_paginate .paginate_button{
+.dataTables_wrapper .dataTables_paginate .paginate_button {
     padding: 0 !important;
 }
 
 /*新增居民表单*/
-.form{
+.form {
     width: 100%;
     height: 98%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 9999;
     position: absolute;
 }
-/*2019/2/20修改部分*/
-.form form{
-    margin: 4rem auto;
+
+.form form {
+    margin: 20px auto;
     width: 300px;
-    height: 355px;
+    height: 400px;
     background: #f2f6fa;
     z-index: 9999;
     border-radius: 5px;
 }
-/*//修改部分*/
 
-.resWrapper ul{
+.resWrapper ul {
     display: inline-block;
     margin-top: 1.5rem;
     margin-left: -1.5rem;
     font-family: "微软雅黑";
     font-weight: lighter;
 }
-.resWrapper li{
+
+.resWrapper li {
     display: inline-block;
     margin-top: 1rem;
 }
-.resWrapper input{
+
+.resWrapper input {
+    width: 160px;
+    outline: none;
+    border: 1px #cecdcd solid;
+    border-radius: 3px;
+}
+
+.resWrapper select {
     width: 160px;
 }
-.resWrapper #male{
-    width:50px;
+
+.resWrapper #male {
+    width: 50px;
 }
-.resWrapper #female{
-    width:50px;
+
+.resWrapper #female {
+    width: 50px;
 }
-.resWrapper #smmale{
-    width:50px;
+
+.resWrapper #smmale {
+    width: 50px;
 }
-.resWrapper #smfemale{
-    width:50px;
+
+.resWrapper #smfemale {
+    width: 50px;
 }
-.resWrapper button{
-    margin-left: 6rem;
+
+.resWrapper button {
+    margin-left: 41px;
     margin-top: 10px;
 }
 
 /*健康档案*/
-.content{
+.content {
     position: relative;
 }
-.pieechart{
+
+.pieechart {
     width: 500px;
     height: 300px;
     background: #f2f6fa;
     position: absolute;
 }
-.familyEchart{
+
+.familyEchart {
     float: left;
 }
-.marryEchart{
+
+.marryEchart {
     position: absolute;
     right: 15px;
 }
-.histoechart{
+
+.histoechart {
     width: 1009px;
     height: 300px;
     background: #f2f6fa;
     margin: 0 auto;
     /*position: absolute;*/
 }
-.ageEchart{
+
+.ageEchart {
     margin-top: 320px;
 }
 
-/*2019/2/20增加部分*/
 /*社区资料*/
-.information .content > div{
+.information .content>div {
     position: relative;
     background: #f2f6fa;
     color: #424242;
     height: auto;
-  
+
     border-radius: 5px;
 }
-.information form{
+
+.information form {
     font-family: "微软雅黑 Light";
 }
 
-.information p{
+.information p {
     text-align: right;
 }
-.information .input-xlarge{
+
+.information .input-xlarge {
     text-align: center;
     border: 1px solid #ccc;
     margin-top: 3px;
@@ -321,7 +374,7 @@ table.dataTable thead > tr > th{
     border-radius: 3px;
 }
 
-.information button{
+.information button {
     display: inline-block;
     width: 100px;
     height: 30px;
@@ -335,19 +388,32 @@ table.dataTable thead > tr > th{
     right: 30px;
     bottom: 1%;
 }
-/*!--增加部分*/
-
-
 
 /*系统管理之发布公告*/
-.not .notGroup{
+.not .notGroup {
     margin-bottom: 2rem;
 }
-.not p{
+
+.not .imgGroup .btn-primary{
+    margin-top: 9px;
+}
+.not .imgGroup .btn-primary i{
+    color: #fff;
+}
+.not .imgGroup .btn-primary span{
+    color: #fff;
+}
+.not .imgGroup button{
+    float: right;
+    margin-top: 9px;
+}
+
+.not p {
     margin: 0;
     padding: 0;
 }
-.not .control{
+
+.not .control {
     border: 1px solid #ddd;
     padding: 7px 0;
     border-radius: 3px;
@@ -356,17 +422,19 @@ table.dataTable thead > tr > th{
     width: 100%;
 }
 
-.not .btn{
+.not .btn {
     margin-top: 20px;
     width: 100px;
     height: 36px;
     border: 1px solid #ddd;
     color: #777;
 }
-.not .editor{
+
+.not .editor {
     background: #f2f6fa;
 }
-.not .notBtn{
+
+.not .notBtn {
     background: #3399cc;
     width: 100px;
     height: 30px;
@@ -377,8 +445,12 @@ table.dataTable thead > tr > th{
     line-height: 30px;
     margin: 10px 10px 0 0;
 }
+.not .notBtn:hover{
+    background: #265b8a;
+}
+
 /*公告管理*/
-.notsys .bootstrap-table{
+.notsys .bootstrap-table {
     background: #f2f6fa;
     border-radius: 5px;
 }

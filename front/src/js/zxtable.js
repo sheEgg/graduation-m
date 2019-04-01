@@ -1,105 +1,17 @@
-(function innit() {
-    // var zxpatient = [{
-    //         "id": 20180101,
-    //         "name": "李富贵",
-    //         "sex": "男",
-    //         "phone": 15236478900,
-    //         "date": "2018-12-31",
-    //         "kind": "高血压体脂肪检查"
-    //     },
-    //     {
-    //         "id": 20180102,
-    //         "name": "曾宝强",
-    //         "sex": "男",
-    //         "phone": 15236478900,
-    //         "date": "2018-12-25",
-    //         "kind": "糖尿病空腹血糖检查"
-    //     },
-    //     {
-    //         "id": 20180103,
-    //         "name": "陈飞",
-    //         "sex": "男",
-    //         "phone": 15236478900,
-    //         "date": "2018-12-11",
-    //         "kind": "幼儿卡介苗接种"
-    //     },
-    //     {
-    //         "id": 20180104,
-    //         "name": "黄丽",
-    //         "sex": "女",
-    //         "phone": 15236478900,
-    //         "date": "2018-12-06",
-    //         "kind": "孕期B超检查"
-    //     },
-    //     {
-    //         "id": 20180105,
-    //         "name": "王成",
-    //         "sex": "男",
-    //         "phone": 15236478900,
-    //         "date": "2018-12-03",
-    //         "kind": "骨折之后康复治疗"
-    //     },
-    //     {
-    //         "id": 20180106,
-    //         "name": "吕一丽",
-    //         "sex": "女",
-    //         "phone": 15236478900,
-    //         "date": "2018-11-29",
-    //         "kind": "乙肝疫苗接种"
-    //     },
-    //     {
-    //         "id": 20180107,
-    //         "name": "卢玉兰",
-    //         "sex": "女",
-    //         "phone": 15236478900,
-    //         "date": "2018-11-19",
-    //         "kind": "糖尿病肾功能检查"
-    //     },
-    //     {
-    //         "id": 20180108,
-    //         "name": "刘万鹏",
-    //         "sex": "男",
-    //         "phone": 15236478900,
-    //         "date": "2018-11-16",
-    //         "kind": "高血压康复治疗"
-    //     },
-    //     {
-    //         "id": 20180109,
-    //         "name": "雷乔亚",
-    //         "sex": "女",
-    //         "phone": 15236478900,
-    //         "date": "2018-11-13",
-    //         "kind": "产后恢复康复治疗"
-    //     },
-    //     {
-    //         "id": 20180109,
-    //         "name": "张三",
-    //         "sex": "女",
-    //         "phone": 15236478900,
-    //         "date": "2018-11-10",
-    //         "kind": "产后恢复康复治疗"
-    //     },
-    //     {
-    //         "id": 20180109,
-    //         "name": "李四",
-    //         "sex": "女",
-    //         "phone": 15236478900,
-    //         "date": "2018-11-01",
-    //         "kind": "产后恢复康复治疗"
-    //     },
-    // ];
-    $('#zxtable').DataTable({
-        ajax: {
-            url: "https://easy-mock.com/mock/5c9c2e7fd172204b3a07ec75/zxList",
-        },
-        processing: true,
-        // stateSave: false,
-        // ordering: false,
-        // serverSide: true,
-        searching: true,
-        autoWidth: false,
-        pagingType: "full_numbers",
-        language: {
+function zxList() {
+    //渲染表格
+    if ($.fn.dataTable.isDataTable('#zxtable')) {
+        table = $('#zxtable').DataTable();
+    } else {
+        $('#zxtable').DataTable({
+            ajax: {
+                url: "https://easy-mock.com/mock/5c9c2e7fd172204b3a07ec75/zxList",
+            },
+            processing: true,
+            searching: true,
+            autoWidth: false,
+            pagingType: "full_numbers",
+            language: {
                 "sProcessing": "处理中...",
                 "sLengthMenu": "显示 _MENU_ 项结果",
                 "sZeroRecords": "没有匹配结果",
@@ -119,94 +31,179 @@
                     "sLast": "末页"
                 }
             },
-        aoColumnDefs: [ { "bSortable": false, "aTargets": [ 0 ,7] }],
-        aaSorting: [[1, "asc"]],
-        columns: [
-            {
-                "className": "details-control",
-                data: null,
-                "defaultContent": '<td><span><i class="fa fa-square-o fa-lg"></i></span></td>'
+            aoColumnDefs: [{
+                "bSortable": false,
+                "aTargets": [0, 7]
+            }],
+            aaSorting: [
+                [1, "asc"]
+            ],
+            columns: [{
+                    "className": "index",
+                    "data": null,
+                    "render": function (data, type, row, meta) {
+                        var no = meta.settings._iDisplayStart + meta.row + 1;
+                        return no;
+                    }
+                },
+                {
+                    data: "id"
+                },
+                {
+                    data: "name"
+                },
+                {
+                    data: "sex"
+                },
+                {
+                    data: "age"
+                },
+                {
+                    data: "status"
+                },
+                {
+                    data: "phone"
+                },
+                {
+                    data: "date"
+                },
+                {
+                    data: "kind"
+                },
+                {
+                    "className": "table-control",
+                    data: null,
+                    "render": function (data, type, row, meta) {
+                        var html = "<td><i title='删除' class='fa fa-trash-o table-delete-btn' aria-hidden='true' data-index=" + meta.row + ">已完成</i>" +
+                            "<i title='编辑' class='fa fa-pencil-square-o table-update-btn' aria-hidden='true' data-index=" + meta.row + ">查看编辑</i>";
+                        return html;
+                    }
+                }
+            ]
+        });
+    }
+
+    // 新增
+    $("#zxbtn").click(function (e) {
+        e.preventDefault();
+        var data = getFormData($('#zxList'));
+        console.log(data);
+        $.ajax({
+            url: 'https://easy-mock.com/mock/5c9c2e7fd172204b3a07ec75/zxList',
+            type: 'GET',
+            data: {
+                ...data, //拼接数据
             },
-            {data: "id" },
-            {data: "name" },
-            {data: "sex"},
-            {data: "phone" },
-            {data: "date"},
-            {data: "kind"},
-            {
-                "className": "table-control",
-                data: null,
-                "defaultContent": "<td><i title='删除' class='fa fa-trash-o table-delete-btn' aria-hidden='true'>删除</i><i title='修改' class='fa fa-pencil-square-o table-update-btn' aria-hidden='true'>修改</i><i title='查看' class='fa fa-search-plus table-view-btn' aria-hidden='true'>查看</i></td>"
-            }]
-    });
-    $("#zxtable").on("click", "td.details-control",
-    function() {
-        // 全选中状态
-        if ($(this).find("i").hasClass("fa-check-square")) {
+            dataType: 'json',
+            success: function (res) {
+                // alert("新增成功！");
+                // console.log(res);
+                if (res.status == 'success') {
+                    alert("新增成功！");
+                    $('#zxList')[0].reset();
+                    $('.zxTable .zx').trigger('showzxTab');
+                }
+            }
+        })
+    })
 
-            $(this).find("i").attr("class", "fa fa-square-o fa-lg");
-        } else {
+    function getFormData(dom) {
+        var data = $(dom).serializeArray(); //获取表单中的数据,此处获取的是数组
+        var result = {};
+        data.forEach(function (item, index) {
+            result[item.name] = item.value; // 将获取到的数组数据转为对象
+        });
+        return result;
+    }
 
-            $(this).find("i").attr("class", "fa fa-check-square fa-lg")
-        };
+    // 表单回填
+    function renderEditForm(data) {
+        var editForm = $('#zx-editor-List')[0];
+        for (var prop in data) {
+            if (editForm[prop]) {
+                editForm[prop].value = data[prop];
+            }
+        }
+    }
+    var table = $('#zxtable').DataTable();
+    var tbody = $("#zxtable tbody");
+    //编辑操作
+    tbody.on("click", ".table-update-btn", function () {
+        $('#zx-editor-form').show();
+        var index = $(this).attr('data-index');
+        var dataList = table.row(index).data();
+        renderEditForm(dataList);
     });
-    $('.table-delete-btn').on('click', function () {
+    //编辑之提交
+    $('#zx-editor-btn').click(function (e) {
+        e.preventDefault();
+        var data = getFormData($('#zx-editor-List'));
+        $.ajax({
+            url: 'https://easy-mock.com/mock/5c9c2e7fd172204b3a07ec75/zxList',
+            type: 'GET',
+            data: {
+                ...data, //拼接数据
+            },
+            dataType: 'json',
+            success: function (res) {
+                alert("修改成功！");
+                $('#zx-editor-form').hide();
+                console.log(res);
+                if (res.status == 'success') {
+                    alert("修改成功！");
+                    $('#zx-editor-form').hide();
+                    $('.zxTable .zx').trigger('showzxTab');
+                }
+            }
+        })
+    });
+    // 删除
+    $("#zxtable tbody").on("click", ".table-delete-btn", function () {
+        var $tds = $(this).parent().parent().children();
+        var $tr = $(this).parent().parent();
+        var ClassId = $($tds[0]).text();
         swal({
-                title: "确定删除?",
-                text: "一旦删除，不能撤销！",
+                title: "确定已完成该服务?",
+                text: "一旦删除不能撤销,请谨慎操作！",
                 icon: "warning",
                 buttons: true,
-                dangerMode: true,
+                buttons: ["马上去完成", "是的，我已完成"]
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
-                    swal("您已成功删除该条数据!", {
-                        icon: "success",
+                    $.ajax({
+                        type: "post",
+                        url: "",
+                        data: {
+                            "ClassId": ClassId
+                        },
+                        success: function (data) {
+                            var dataObj = $.parseJSON(data);
+                            if (dataObj.status === 1) { //后端删除成功
+                                swal("您已删除已完成的服务项目", '', "success");
+                                $tr.remove(); //删除页面中那一行数据
+                                $('.zxTable .zx').trigger('showzxTab');
+                            } else {
+                                swal("出错啦。。。", dataObj.msg, "error"); //后端删除失败
+                            }
+                        },
+                        error: function () { // ajax请求失败
+                            swal("啊哦。。。", "服务器走丢了。。。", "error");
+                        }
                     });
                 } else {
-                    swal("您已取消删除数据!");
+                    swal("请尽快完成该项服务再来删除吧~");
                 }
             });
-    })
+    });
 
-
-    // 2019/2/20新增内容
-    //新增操作
-    $('#zxbtn').click(function add() {
-        var id = document.getElementById('id').value;
-        var name = document.getElementById('name').value;
-        var sex = $('#zxform input[name="sex"]:checked ').val();
-        var phone = document.getElementById('phone').value;
-        var date = document.getElementById('date').value;
-        var kind = document.getElementById('kind').value;
-        row = document.getElementById('zxtb').insertRow();
-        if (row != null) {
-            cell = row.insertCell();
-            cell.innerHTML = "<span><i class='fa fa-square-o fa-lg'></i></span>";
-            cell = row.insertCell();
-            cell.innerHTML = id;
-            cell = row.insertCell();
-            cell.innerHTML = name;
-            cell = row.insertCell();
-            cell.innerHTML = sex;
-            cell = row.insertCell();
-            cell.innerHTML = phone;
-            cell = row.insertCell();
-            cell.innerHTML = date;
-            cell = row.insertCell();
-            cell.innerHTML = kind;
-            cell = row.insertCell();
-            cell.innerHTML = "<i title='删除' class='fa fa-trash-o table-delete-btn' aria-hidden='true'>删除</i><i title='修改' class='fa fa-pencil-square-o table-update-btn' aria-hidden='true'>修改</i><i title='查看' class='fa fa-search-plus table-view-btn' aria-hidden='true'>查看</i>";
-        }
-    })
-    // --新增内容--
-    
     $("#zxadd").click(function () {
         $("#zxform").show();
     });
     $("#zxclose").click(function () {
         $("#zxform").hide();
     })
-
-})();
+    $('#zx-editor-close').click(function () {
+        $("#zx-editor-form").hide();
+    })
+}
